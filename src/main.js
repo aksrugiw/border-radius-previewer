@@ -4,7 +4,8 @@ const inputTopLeft = document.getElementById("input-top-left");
 const inputTopRight = document.getElementById("input-top-right");
 const inputBottomRight = document.getElementById("input-bottom-right");
 const inputBottomLeft = document.getElementById("input-bottom-left");
-const inputs = [inputTopLeft, inputTopRight, inputBottomLeft, inputBottomRight];
+const inputs = document.querySelectorAll("input");
+const buttons = document.querySelectorAll(".btn");
 
 function setBorderRadius(radius, corner = "all") {
   if (corner === "all") {
@@ -28,7 +29,18 @@ function updateBorderRadius(evt) {
   setBorderRadius(radius, corner);
 }
 
+function assignAll(evt) {
+  const radius = evt.target.nextElementSibling.value;
+  setBorderRadius(radius, "all");
+  updateInputsValue(radius);
+}
+
+function updateInputsValue(value) {
+  inputs.forEach((input) => (input.value = value));
+}
+
 inputs.forEach((input) => (input.value = DEFAULT_BORDER_RADIUS));
 inputs.forEach((input) => input.addEventListener("input", updateBorderRadius));
+buttons.forEach((button) => button.addEventListener("click", assignAll));
 
 setBorderRadius(DEFAULT_BORDER_RADIUS);

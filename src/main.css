@@ -37,26 +37,29 @@ input[type="number"] {
   height: 20px;
   padding: 5px;
   text-align: center;
-  position: absolute;
   border-radius: 2px;
 }
 
-#input-top-left {
+.top-left {
+  position: absolute;
   left: -45px;
   top: -45px;
 }
 
-#input-top-right {
+.top-right {
+  position: absolute;
   right: -45px;
   top: -45px;
 }
 
-#input-bottom-left {
+.bottom-left {
+  position: absolute;
   left: -45px;
   bottom: -45px;
 }
 
-#input-bottom-right {
+.bottom-right {
+  position: absolute;
   right: -45px;
   bottom: -45px;
 }
