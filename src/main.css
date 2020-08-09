@@ -23,6 +23,7 @@ input[type="number"] {
 
 .border-box {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 5px solid purple;
@@ -62,4 +63,10 @@ input[type="number"] {
   position: absolute;
   right: -45px;
   bottom: -45px;
+}
+
+.container {
+  background-color: #fff;
+  margin-bottom: 5px;
+  padding: 6px;
 }

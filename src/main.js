@@ -1,4 +1,5 @@
 const DEFAULT_BORDER_RADIUS = "6";
+
 const box = document.querySelector(".border-box");
 const inputTopLeft = document.getElementById("input-top-left");
 const inputTopRight = document.getElementById("input-top-right");
@@ -14,6 +15,7 @@ function setBorderRadius(radius, corner = "all") {
 
   const convertedCorner = convertToPascalCase(corner);
   box.style[`border${convertedCorner}Radius`] = `${radius}px`;
+  generateCSS(radius, corner);
 }
 
 function convertToPascalCase(str) {
@@ -37,6 +39,17 @@ function assignAll(evt) {
 
 function updateInputsValue(value) {
   inputs.forEach((input) => (input.value = value));
+}
+
+function generateCSS(radius, corner) {
+  const container = document.querySelector(".container");
+  container.innerHTML = `
+  <pre>
+  -webkit-border-radius: ${box.style.borderRadius};
+  -moz-border-radius: ${box.style.borderRadius};
+  border-radius: ${box.style.borderRadius};
+  </pre>
+  `;
 }
 
 inputs.forEach((input) => (input.value = DEFAULT_BORDER_RADIUS));
