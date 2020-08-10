@@ -27,7 +27,7 @@ function convertToPascalCase(str) {
 }
 
 function updateBorderRadius(evt) {
-  const corner = evt.target.id.split("input-")[1];
+  const corner = evt.target.id;
   const radius = evt.target.value;
   setBorderRadius(radius, corner);
 }
