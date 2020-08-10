@@ -69,4 +69,5 @@ input[type="number"] {
   background-color: #fff;
   margin-bottom: 5px;
   padding: 6px;
+  text-align: right;
 }
