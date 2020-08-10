@@ -33,7 +33,8 @@ function updateBorderRadius(evt) {
 }
 
 function applyToAllCorners(evt) {
-  const radius = evt.target.previousElementSibling.value;
+  const targetInput = evt.target.previousElementSibling || evt.target.parentElement.previousElementSibling;
+  const radius = targetInput.value;
   setBorderRadius(radius, "all");
   updateInputsValue(radius);
 }
