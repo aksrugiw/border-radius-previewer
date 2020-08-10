@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 body {
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -18,7 +21,7 @@ input[type="number"] {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: pink;
+  background: #e5e5e5;
 }
 
 .border-box {
@@ -26,43 +29,76 @@ input[type="number"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 5px solid purple;
-  width: 40%;
-  height: 40%;
   position: relative;
+  min-width: 45%;
+  min-height: 25%;
+
+  background: #303864;
+  border-radius: 6px;
+  padding: 5%;
 }
 
 .border-box input {
   border: none;
-  width: 20px;
-  height: 20px;
+  background: #f4d16e;
+  color: #303864;
+  font-size: 26px;
+  line-height: 30px;
+  width: 45px;
+  height: 45px;
   padding: 5px;
   text-align: center;
   border-radius: 2px;
 }
 
+.btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 55px;
+  border: none;
+  background: #d66892;
+  cursor: pointer;
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.clipboard {
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 5% 6%;
+  margin-top: 3%;
+}
+
 .top-left {
   position: absolute;
-  left: -45px;
-  top: -45px;
+  left: -55px;
+  top: -60px;
 }
 
 .top-right {
   position: absolute;
-  right: -45px;
-  top: -45px;
+  right: -90px;
+  top: -60px;
 }
 
 .bottom-left {
   position: absolute;
-  left: -45px;
-  bottom: -45px;
+  left: -55px;
+  bottom: -60px;
 }
 
 .bottom-right {
   position: absolute;
-  right: -45px;
-  bottom: -45px;
+  right: -90px;
+  bottom: -60px;
 }
 
 .container {
@@ -70,4 +106,15 @@ input[type="number"] {
   margin-bottom: 5px;
   padding: 6px;
   text-align: right;
+  min-width: 80%;
+  min-height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container pre {
+  box-shadow: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 23px;
 }

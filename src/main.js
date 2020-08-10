@@ -6,7 +6,7 @@ const inputTopRight = document.getElementById("input-top-right");
 const inputBottomRight = document.getElementById("input-bottom-right");
 const inputBottomLeft = document.getElementById("input-bottom-left");
 const inputs = document.querySelectorAll("input");
-const buttons = document.querySelectorAll(".btn");
+const buttons = document.querySelectorAll(".apply-all");
 const clipboardButton = document.querySelector(".clipboard");
 
 function setBorderRadius(radius, corner = "all") {
@@ -32,8 +32,8 @@ function updateBorderRadius(evt) {
   setBorderRadius(radius, corner);
 }
 
-function assignAll(evt) {
-  const radius = evt.target.nextElementSibling.value;
+function applyToAllCorners(evt) {
+  const radius = evt.target.previousElementSibling.value;
   setBorderRadius(radius, "all");
   updateInputsValue(radius);
 }
@@ -53,11 +53,16 @@ function generateCSS(radius, corner) {
 
 function copyToClipboard(evt) {
   const content = document.querySelector(".container pre");
+  const defaultBtnText = evt.target.innerHTML;
 
   navigator.clipboard
     .writeText(content.innerHTML)
     .then(() => {
       evt.target.innerHTML = "Copied!";
+
+      setTimeout(() => {
+        evt.target.innerHTML = defaultBtnText;
+      }, 1000);
     })
     .catch((err) => {
       console.log("Something went wrong", err);
@@ -66,7 +71,7 @@ function copyToClipboard(evt) {
 
 inputs.forEach((input) => (input.value = DEFAULT_BORDER_RADIUS));
 inputs.forEach((input) => input.addEventListener("input", updateBorderRadius));
-buttons.forEach((button) => button.addEventListener("click", assignAll));
+buttons.forEach((button) => button.addEventListener("click", applyToAllCorners));
 clipboardButton.addEventListener("click", copyToClipboard);
 
 setBorderRadius(DEFAULT_BORDER_RADIUS);
