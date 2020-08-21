@@ -12,7 +12,7 @@ Simple generator where user can input border radius and get as a result CSS sour
 
 ## More versions
 
-You can find more versions of this project, whick I created with popular framework:
+You can find more versions of this project, which I created with popular framework (_in progress_):
 
 - [React.js](link)
 
@@ -24,9 +24,9 @@ You can find more versions of this project, whick I created with popular framewo
 
 Project is: _in progress_
 
-To Do list:
+To Do:
 
-- [ ] dividing into separate modules
+- [ ] split into separate modules
 
 - [ ] add tests
 
